@@ -1,0 +1,30 @@
+[
+  {
+    "id": "0c02c29f-9d98-4d6d-ac20-0f58e871ea88",
+    "user_id": "f62914c6-c72f-4093-b3b8-0c9b657c0284",
+    "title": "Fun",
+    "from_location": "Bellary",
+    "to_location": "Mysuru",
+    "date": "2025-10-22",
+    "seats": 5,
+    "budget": 20000.0,
+    "description": "Trip for 3 days and 2 nights ",
+    "type": "driver",
+    "status": "approved",
+    "created_at": "2025-10-21T01:26:13.010686"
+  },
+  {
+    "id": "dd8d833e-2dea-4703-8aaf-c16908f5f73b",
+    "user_id": "f62914c6-c72f-4093-b3b8-0c9b657c0284",
+    "title": "Business",
+    "from_location": "Bellary",
+    "to_location": "Goa",
+    "date": "2025-10-24",
+    "seats": 3,
+    "budget": 25000.0,
+    "description": "Its a Business and short enjoy trip",
+    "type": "driver",
+    "status": "rejected",
+    "created_at": "2025-10-21T01:41:57.518595"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "7b54fe79-23ac-4f32-8201-8521a76876ec",
+    "user_id": "f62914c6-c72f-4093-b3b8-0c9b657c0284",
+    "amount": 20.0,
+    "credits": 1,
+    "timestamp": "2025-10-21T01:20:09.425137"
+  },
+  {
+    "id": "083abc4b-9627-4ca2-9a07-8017c5b35246",
+    "user_id": "f62914c6-c72f-4093-b3b8-0c9b657c0284",
+    "amount": 90.0,
+    "credits": 5,
+    "timestamp": "2025-10-21T01:20:26.502392"
+  },
+  {
+    "id": "6002d2af-6d8d-48b0-a397-cb02554125b5",
+    "user_id": "412cedf6-2988-4d85-aac6-b99a3729baf7",
+    "amount": 15.0,
+    "credits": 1,
+    "timestamp": "2025-10-21T01:43:27.314020"
+  },
+  {
+    "id": "98343be4-e493-4fff-baba-1ae82f3debd7",
+    "user_id": "412cedf6-2988-4d85-aac6-b99a3729baf7",
+    "amount": 15.0,
+    "credits": 1,
+    "timestamp": "2025-10-21T01:45:35.005719"
+  }
+]

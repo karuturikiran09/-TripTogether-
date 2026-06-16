@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripTogether - Smart Travel Coordination</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="nav-brand">
+                <i class="fas fa-route"></i>
+                TripTogether
+            </a>
+            <div class="nav-menu">
+                <a href="#" class="nav-link active" onclick="window.scrollTo(0, 0); return false;">Home</a>
+                <a href="#" class="nav-link" onclick="scrollToTrips()">Trips</a>
+                <a href="#" class="nav-link" onclick="scrollToHowItWorks()">How It Works</a>
+                <a href="#" class="nav-link" onclick="scrollToAbout()">About</a>
+            </div>
+            <div class="nav-actions" id="publicNavActions">
+                <button class="btn btn-outline" onclick="showLogin()">Login</button>
+                <button class="btn btn-primary" onclick="showRegister()">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Smart Travel Coordination</h1>
+            <p class="hero-subtitle">Connect with fellow travelers, share costs, and make your journey memorable</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary btn-lg" onclick="showRegister()">
+                    <i class="fas fa-user-plus"></i> Get Started
+                </button>
+                <button class="btn btn-outline" onclick="scrollToTrips()" style="background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.5); color: white;">
+                    <i class="fas fa-search"></i> Browse Trips
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>1000+</h3>
+                    <p>Active Users</p>
+                </div>
+                <div class="stat">
+                    <h3>500+</h3>
+                    <p>Trips Shared</p>
+                </div>
+                <div class="stat">
+                    <h3>₹50L+</h3>
+                    <p>Saved by Travelers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose TripTogether?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Connect with Travelers</h3>
+                    <p>Find like-minded travelers going your way and share the journey experience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>Save Money</h3>
+                    <p>Split fuel, toll, and accommodation costs to make travel more affordable.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safe & Secure</h3>
+                    <p>Verified profiles and secure chat system for worry-free coordination.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trips Section -->
+    <section class="trips-section" id="trips">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Available Trips</h2>
+                <button class="btn btn-primary" onclick="showRegister()">
+                    <i class="fas fa-plus"></i> Post Your Trip
+                </button>
+            </div>
+            <div class="search-bar">
+                <div class="search-input">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search by location...">
+                </div>
+                <select class="filter-select" id="typeFilter">
+                    <option value="">All Types</option>
+                    <option value="driver">Driver</option>
+                    <option value="traveler">Traveler</option>
+                    <option value="sponsor">Sponsor</option>
+                </select>
+                <button class="btn btn-primary" onclick="searchTrips()">
+                    <i class="fas fa-filter"></i> Filter
+                </button>
+            </div>
+            <div class="trips-grid" id="tripsGrid">
+                <!-- Trips will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How TripTogether Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Create Account</h3>
+                    <p>Sign up and create your profile with travel preferences.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Post or Find Trips</h3>
+                    <p>Either post your trip details or browse available trips.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Connect & Chat</h3>
+                    <p>Use our secure chat system to coordinate with travelers.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Travel Together</h3>
+                    <p>Meet up and enjoy your shared journey experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About TripTogether</h2>
+            <div class="about-text">
+                <p>TripTogether is a revolutionary platform that connects travelers with similar routes, enabling them to share costs and experiences. Whether you're driving, traveling as a passenger, or willing to sponsor a trip, our intelligent matching system helps you find the perfect travel companions.</p>
+                <p>Our mission is to make travel more affordable, social, and sustainable by connecting people and reducing the number of vehicles on the road.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TripTogether</h3>
+                    <p>Smart travel coordination for the modern traveler.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#">Home</a>
+                    <a href="#trips">Browse Trips</a>
+                    <a href="#">Post Trip</a>
+                    <a href="#">How It Works</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TripTogether. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2><i class="fas fa-sign-in-alt"></i> Login to Your Account</h2>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+            </form>
+            <p class="modal-footer-text">
+                Don't have an account? <a onclick="showRegister()">Sign Up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2><i class="fas fa-user-plus"></i> Create New Account</h2>
+            <form onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label for="regUsername">Username</label>
+                    <input type="text" id="regUsername" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regEmail">Email</label>
+                        <input type="email" id="regEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPhone">Phone Number</label>
+                        <input type="tel" id="regPhone" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="regAadhar">Aadhar Number (12 digits)</label>
+                    <input type="text" id="regAadhar" required minlength="12" maxlength="12" pattern="\d{12}" oninput="validateAadharInput(this)">
+                    <div id="aadharHelp" style="display: none; font-size: 0.85rem; margin-top: 0.5rem;"></div>
+                    <div id="aadharVerificationStatus" style="display: none; font-size: 0.9rem; margin-top: 0.5rem;"></div>
+                </div>
+                <div class="form-group">
+                    <label for="regAadharPhoto">Aadhar Card Photo</label>
+                    <input type="file" id="regAadharPhoto" accept=".jpg,.jpeg,.png" required onchange="validateAadharPhoto(this)">
+                    <div style="font-size: 0.85rem; color: #6b7280; margin-top: 0.5rem;">Upload a clear photo of your Aadhar card (Allowed formats: JPG, JPEG, PNG)</div>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" required minlength="6">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </button>
+            </form>
+            <p class="modal-footer-text">
+                Already have an account? <a onclick="showLogin()">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Create Trip Modal -->
+    <div id="createTripModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close" onclick="closeModal('createTripModal')">&times;</span>
+            <h2><i class="fas fa-plus-circle"></i> Post a New Trip</h2>
+            <form onsubmit="handleCreateTrip(event)">
+                <div class="form-group">
+                    <label for="tripTitle">Trip Title</label>
+                    <input type="text" id="tripTitle" required placeholder="e.g., Mumbai to Goa Beach Trip">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tripType">Trip Type</label>
+                        <select id="tripType" required>
+                            <option value="">Select Type</option>
+                            <option value="driver">Driver (I'm driving)</option>
+                            <option value="traveler">Traveler (I need a ride)</option>
+                            <option value="sponsor">Sponsor (I'll sponsor costs)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tripDate">Travel Date</label>
+                        <input type="date" id="tripDate" required min="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tripFrom">From Location</label>
+                        <input type="text" id="tripFrom" required placeholder="e.g., Mumbai">
+                    </div>
+                    <div class="form-group">
+                        <label for="tripTo">To Location</label>
+                        <input type="text" id="tripTo" required placeholder="e.g., Goa">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tripSeats">Available Seats</label>
+                        <input type="number" id="tripSeats" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tripBudget">Estimated Budget (₹)</label>
+                        <input type="number" id="tripBudget" min="0" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tripDescription">Trip Description</label>
+                    <textarea id="tripDescription" rows="4" required placeholder="Describe your trip, preferences, and what you're looking for in travel companions..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-paper-plane"></i> Post Trip
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Trip Details Modal -->
+    <div id="tripDetailsModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close" onclick="closeModal('tripDetailsModal')">&times;</span>
+            <div id="tripDetailsContent">
+                <!-- Trip details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close" onclick="closeModal('paymentModal')">&times;</span>
+            <h2><i class="fas fa-credit-card"></i> Purchase Chat Credits</h2>
+            <p style="text-align: center; color: var(--gray); margin-bottom: 2rem;">Unlock conversations with trip owners</p>
+            <div class="credit-packages" id="creditPackages">
+                <!-- Credit packages will be loaded here -->
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="btn btn-primary" onclick="processPayment()" style="padding: 1rem 2rem;">
+                    <i class="fas fa-lock"></i> Proceed to Payment
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard" id="dashboard" style="display: none;">
+        <div class="sidebar-header">
+            <i class="fas fa-route"></i>
+            <span id="sidebarTitle">TripTogether</span>
+            <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+        <div class="dashboard-sidebar" id="userDashboardSidebar">
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" onclick="showDashboardSection('overview')">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="#" class="sidebar-link" onclick="showDashboardSection('browse')">
+                    <i class="fas fa-search"></i> Browse Trips
+                </a>
+                <a href="#" class="sidebar-link" onclick="showDashboardSection('mytrips')">
+                    <i class="fas fa-car"></i> My Trips
+                </a>
+                <a href="#" class="sidebar-link" onclick="showDashboardSection('chats')">
+                    <i class="fas fa-comments"></i> My Chats
+                </a>
+                <a href="#" class="sidebar-link" onclick="showDashboardSection('credits')">
+                    <i class="fas fa-coins"></i> Chat Credits
+                </a>
+                <a href="#" class="sidebar-link" onclick="showDashboardSection('planner')">
+                    <i class="fas fa-robot"></i> AI Trip Planner
+                </a>
+                <a href="#" class="sidebar-link" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </nav>
+        </div>
+        <div class="dashboard-main">
+            <div class="dashboard-header">
+                <h1 id="dashboardTitle">Dashboard Overview</h1>
+                <p>Manage your trips and connections</p>
+            </div>
+            <div id="dashboardContent">
+                <!-- Dashboard content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js?v=1.1"></script>
+</body>
+</html>
